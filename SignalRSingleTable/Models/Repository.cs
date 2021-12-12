@@ -101,8 +101,6 @@ namespace SignalRSingleTable.Models
 
             }
 
-
-
             return newEmployeesList;
         }
 
@@ -145,8 +143,6 @@ namespace SignalRSingleTable.Models
                 }
 
             }
-
-
             return items;
         }
 
