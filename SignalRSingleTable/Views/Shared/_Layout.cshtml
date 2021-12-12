@@ -1,11 +1,4 @@
 ﻿
-<style>
-    #img_logo {
-     
-    }
-
-</style>
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -21,17 +14,24 @@
     <div style="background-color: #dccfd8" class="navbar navbar-inverse navbar-fixed-top">
 
         <div class="container">
-            <a class="navbar-brand">
+            @*<a class="navbar-brand">
                 <img id="img_logo" alt="Logo" src="@Url.Content("~/Content/Images/Webp.net-resizeimage.png")" />
 
-            </a>
-            <div id="logoBottom" class="navbar-header">
+            </a>*@
+            <div class="navbar-header">
+
+                <span class="noti glyphicon glyphicon-bell"><span class="count"> </span></span>
+                <div class="noti-content">
+                    <div class="noti-top-arrow"></div>
+                    <ul id="notiContent"></ul>
+                </div>
 
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
+
                 @*@Html.ActionLink("Contessa", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })*@
             </div>
             <div class="navbar-collapse collapse">
@@ -57,5 +57,12 @@
     @Styles.Render("~/Content/datatables")
     @Scripts.Render("~/bundles/datatables")
     @RenderSection("scripts", required: false)
+
+
+
+
+
+
+
 </body>
 </html>
