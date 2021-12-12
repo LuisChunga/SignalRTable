@@ -37,4 +37,12 @@ namespace SignalRSingleTable.Models
         public string Notes { get; set; }
     }
 
+    public class Contacts
+    {
+        public int ContactId { get; set; }
+        public string ContactName { get; set; }
+        public string ContctNo { get; set; }
+        public string AddedOn { get; set; }
+    }
+
 }

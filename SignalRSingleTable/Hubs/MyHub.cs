@@ -16,5 +16,13 @@ namespace SignalRSingleTable.Hubs
             context.Clients.All.updateMessages();
         }
 
+
+        public static void SendNotifications()
+        {
+            // from here we will send notification message to clients
+            IHubContext notificationHub = GlobalHost.ConnectionManager.GetHubContext<MyHub>();
+            notificationHub.Clients.All.notify("added");
+        }
+
     }
 }

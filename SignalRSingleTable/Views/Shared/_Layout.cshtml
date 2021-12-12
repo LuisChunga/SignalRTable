@@ -1,17 +1,10 @@
 ﻿
-<style>
-    #img_logo {
-     
-    }
-
-</style>
-
 <!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@ViewBag.Title - Contessa </title>
+    <title>@ViewBag.Title - My </title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
 
@@ -19,28 +12,34 @@
 <body>
 
     <div style="background-color: #dccfd8" class="navbar navbar-inverse navbar-fixed-top">
-
         <div class="container">
-            <a class="navbar-brand">
-                <img id="img_logo" alt="Logo" src="@Url.Content("~/Content/Images/Webp.net-resizeimage.png")" />
+            @*<a class="navbar-brand">
+                    <img id="img_logo" alt="Logo" src="@Url.Content("~/Content/Images/Webp.net-resizeimage.png")" />
+                </a>*@
 
-            </a>
             <div id="logoBottom" class="navbar-header">
+
+                <span class="noti glyphicon glyphicon-bell"><span class="count"> </span></span>
+                <div class="noti-content">
+                    <div class="noti-top-arrow"></div>
+                    <ul id="notiContent"></ul>
+                </div>
+
 
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                @*@Html.ActionLink("Contessa", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })*@
+                @Html.ActionLink("Contessa", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
             </div>
             <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
+                @*<ul class="nav navbar-nav">
 
-                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                    <li>@Html.ActionLink("Details", "About", "Home")</li>
-                    <li>@Html.ActionLink("Reports", "Contact", "Home")</li>
-                </ul>
+                        <li>@html.actionlink("home", "index", "home")</li>
+                        <li>@html.actionlink("details", "about", "home")</li>
+                        <li>@html.actionlink("reports", "contact", "home")</li>
+                    </ul>*@
             </div>
         </div>
     </div>
@@ -54,8 +53,16 @@
 
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
-    @Styles.Render("~/Content/datatables")
-    @Scripts.Render("~/bundles/datatables")
+    @Styles.Render("~/Content/datatables")     @*Add it for the custum table*@
+    @Scripts.Render("~/bundles/datatables")    @*Add it for the custum table*@
     @RenderSection("scripts", required: false)
+
+    <script src="/Scripts/main.js"></script>
+
+
+
+
+
+
 </body>
 </html>

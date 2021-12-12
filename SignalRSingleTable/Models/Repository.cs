@@ -196,6 +196,8 @@ namespace SignalRSingleTable.Models
             }
         }
 
+
+
     private void dependency_OnChange(object sender, SqlNotificationEventArgs e)
         {
             if (e.Type == SqlNotificationType.Change)

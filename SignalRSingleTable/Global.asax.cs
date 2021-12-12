@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SignalRSingleTable.Models;
+using System;
 using System.Collections.Generic;
 using System.Configuration;
 using System.Data.SqlClient;
@@ -23,6 +24,18 @@ namespace SignalRSingleTable
             
             // start SQL dependency
             SqlDependency.Start(connString);
+            NotificationComponent NC = new NotificationComponent();
+            var currentTime = DateTime.Now;
+            NC.RegisterNotification(currentTime);
+
+        }
+
+        protected void Session_Start(object sender, EventArgs e)
+        {
+            //NotificationComponent NC = new NotificationComponent();
+            var currentTime = DateTime.Now;
+            HttpContext.Current.Session["LastUpdated"] = currentTime;
+            //NC.RegisterNotification(currentTime);
         }
 
         protected void Application_End()
